@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dk55m1fofat0c"]
+
+[ext_resource type="PackedScene" uid="uid://bg7rl40ogvcfm" path="res://UI/Scenes/pause.tscn" id="1_jnqna"]
+[ext_resource type="PackedScene" uid="uid://wp6li3jaev2k" path="res://UI/Scenes/settings.tscn" id="2_7yu7q"]
+[ext_resource type="PackedScene" uid="uid://dn8xyj6dabjmc" path="res://UI/Scenes/input_menu.tscn" id="3_jnqna"]
+
+[sub_resource type="Theme" id="Theme_l5mot"]
+default_font_size = 24
+
+[node name="PauseMenu" type="Control" unique_id=1351751336]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l5mot")
+
+[node name="Pause" parent="." unique_id=1649060483 instance=ExtResource("1_jnqna")]
+layout_mode = 1
+
+[node name="Settings" parent="." unique_id=938431009 instance=ExtResource("2_7yu7q")]
+layout_mode = 1
+
+[node name="InputMenu" parent="." unique_id=2105584381 instance=ExtResource("3_jnqna")]
+visible = false
+layout_mode = 1

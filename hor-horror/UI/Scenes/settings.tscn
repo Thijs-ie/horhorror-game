@@ -1,0 +1,475 @@
+[gd_scene format=3 uid="uid://wp6li3jaev2k"]
+
+[ext_resource type="Script" uid="uid://blapg7ioee206" path="res://UI/Scripts/settings.gd" id="1_ldop3"]
+
+[node name="Settings" type="Control" unique_id=938431009]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ldop3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2100563073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Control2" type="Control" parent="HBoxContainer" unique_id=1099790703]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1419399326]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=872944016]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1843535118]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer" unique_id=104265297]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1732880574]
+custom_minimum_size = Vector2(0, 750)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel" unique_id=1465180019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer" unique_id=838806588]
+layout_mode = 2
+
+[node name="Video" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1745590139]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "VIDEO"
+horizontal_alignment = 1
+
+[node name="Display" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1857877454]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Display" unique_id=374365432]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Display Mode"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Display" unique_id=802082050]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DisplayButtons" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Display" unique_id=881925590]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless Window"
+popup/item_2/id = 2
+
+[node name="Resolution" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1608566556]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Resolution" unique_id=1259382470]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Resolution"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Resolution" unique_id=1209546740]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResolutionButtons" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Resolution" unique_id=1827010593]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 3
+item_count = 6
+popup/item_0/text = "480 x 360"
+popup/item_0/id = 0
+popup/item_1/text = "720 x 480"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+popup/item_3/text = "1920 x 1080"
+popup/item_3/id = 3
+popup/item_4/text = "2560 x 1440"
+popup/item_4/id = 4
+popup/item_5/text = "3840 x 2160"
+popup/item_5/id = 5
+
+[node name="V-Sync" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1535693418]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/V-Sync" unique_id=662706176]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "V-Sync"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/V-Sync" unique_id=752818628]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VsyncButtons" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/V-Sync" unique_id=680710131]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 1
+item_count = 2
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "ON"
+popup/item_1/id = 5
+
+[node name="AntiAliasing" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=438992880]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/AntiAliasing" unique_id=1664641803]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Anti Aliasing"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/AntiAliasing" unique_id=1075283929]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AAButtons" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/AntiAliasing" unique_id=1547583811]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 4
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "MSAA 2x"
+popup/item_1/id = 1
+popup/item_2/text = "MSAA 4x"
+popup/item_2/id = 2
+popup/item_3/text = "MSAA 8x"
+popup/item_3/id = 5
+
+[node name="FieldOfView" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1594180221]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/FieldOfView" unique_id=261870603]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Field of View"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/FieldOfView" unique_id=1908654014]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/FieldOfView" unique_id=588936615]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FOVSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/FieldOfView/HBoxContainer" unique_id=1304393526]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 40.0
+max_value = 130.0
+value = 80.0
+
+[node name="FOV" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/FieldOfView/HBoxContainer" unique_id=1161413342]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxFPS" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=407496169]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/MaxFPS" unique_id=758879442]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Max FPS"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/MaxFPS" unique_id=1335258679]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/MaxFPS" unique_id=305958332]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FPSSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/MaxFPS/HBoxContainer" unique_id=1472811999]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 1000.0
+value = 60.0
+
+[node name="FPS" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/MaxFPS/HBoxContainer" unique_id=2020873660]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowFPS" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1745480277]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/ShowFPS" unique_id=1500045256]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Show FPS"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/ShowFPS" unique_id=2074143030]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShowFPSButton" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/ShowFPS" unique_id=320032335]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Show"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1483471892]
+layout_mode = 2
+
+[node name="Audio" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=708138652]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "AUDIO"
+horizontal_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1517896012]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Master" unique_id=2098157385]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Master Volume"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Master" unique_id=1978701591]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Master" unique_id=1475680720]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MasterSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Master/HBoxContainer" unique_id=967760717]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Master" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Master/HBoxContainer" unique_id=143759555]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=851088438]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/SFX" unique_id=1248057932]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Sound Effects"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/SFX" unique_id=1030426077]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/SFX" unique_id=296412050]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/SFX/HBoxContainer" unique_id=2024962278]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="SFX" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/SFX/HBoxContainer" unique_id=56845464]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ambient" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=271341181]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Ambient" unique_id=508781121]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Ambient Noise"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Ambient" unique_id=916239828]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Ambient" unique_id=1390568562]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AmbientSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Ambient/HBoxContainer" unique_id=360364883]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Ambient" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Ambient/HBoxContainer" unique_id=1711897274]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=256356225]
+layout_mode = 2
+
+[node name="Input" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=636940420]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "INPUT"
+horizontal_alignment = 1
+
+[node name="InputMap" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1770308355]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/InputMap" unique_id=763205861]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Input Map"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/InputMap" unique_id=353074270]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputMapButton" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/InputMap" unique_id=100591693]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Show"
+
+[node name="Sensitivity" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1957894851]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Sensitivity" unique_id=1261085887]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Sensitivity"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Sensitivity" unique_id=1308326614]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Sensitivity" unique_id=560590449]
+custom_minimum_size = Vector2(250, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SensSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Sensitivity/HBoxContainer" unique_id=555236910]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 50.0
+
+[node name="Sens" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Sensitivity/HBoxContainer" unique_id=1110867315]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=595313718]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Return" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer" unique_id=1833020761]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Return" unique_id=1792072555]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Return" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Return" unique_id=2097947781]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Return"
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Return" unique_id=795935198]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=685670616]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=245090106]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Display/DisplayButtons" to="." method="_on_display_buttons_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Resolution/ResolutionButtons" to="." method="_on_resolution_buttons_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/V-Sync/VsyncButtons" to="." method="_on_vsync_buttons_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/AntiAliasing/AAButtons" to="." method="_on_aa_buttons_item_selected"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/ShowFPS/ShowFPSButton" to="." method="_on_show_fps_button_toggled"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/InputMap/InputMapButton" to="." method="_on_input_map_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ScrollContainer/Panel/MarginContainer/VBoxContainer/Return/Return" to="." method="_on_return_pressed"]

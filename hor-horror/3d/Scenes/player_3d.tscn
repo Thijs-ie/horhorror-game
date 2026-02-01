@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://jcv2iip64xve"]
+
+[ext_resource type="Script" uid="uid://df4vyuf4b0dm2" path="res://3d/Scripts/player_3d.gd" id="1_blcwy"]
+[ext_resource type="PackedScene" uid="uid://dk55m1fofat0c" path="res://UI/Scenes/pause_menu.tscn" id="2_fdaqm"]
+[ext_resource type="Script" uid="uid://cogxmf7aiqfp2" path="res://3d/Scripts/camera.gd" id="2_pr8jp"]
+[ext_resource type="Shader" uid="uid://ch31gp6tfrnad" path="res://3d/Assets/retro.gdshader" id="4_geje4"]
+[ext_resource type="Script" uid="uid://bqor68f25a21p" path="res://3d/Scripts/States/state_machine.gd" id="4_t14kv"]
+[ext_resource type="Script" uid="uid://p5k2ea3b4ye" path="res://3d/Scripts/States/idle_state.gd" id="5_geje4"]
+[ext_resource type="Script" uid="uid://y3dbjmnvrg7i" path="res://3d/Scripts/States/move_state.gd" id="6_mrt8u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_50s5h"]
+radius = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrt8u"]
+shader = ExtResource("4_geje4")
+shader_parameter/aberration_strength = 1.5000000712500001
+shader_parameter/blur_strength = 1.0000000475
+shader_parameter/noise_strength = 0.030000001425
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.050000002375
+shader_parameter/ghost_strength = 0.030000001425
+shader_parameter/flicker_strength = 0.0010000000475
+
+[node name="Player3D" type="CharacterBody3D" unique_id=1021407674]
+script = ExtResource("1_blcwy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=117314436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_50s5h")
+
+[node name="Head" type="Node3D" parent="." unique_id=1634199992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, 0)
+
+[node name="Camera" type="Camera3D" parent="Head" unique_id=341262478]
+script = ExtResource("2_pr8jp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=797745221]
+layer = 2
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1351751336 instance=ExtResource("2_fdaqm")]
+
+[node name="FPS" type="Label" parent="CanvasLayer" unique_id=756790805]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 24
+text = "0 FPS"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1673222068]
+z_index = 1
+material = SubResource("ShaderMaterial_mrt8u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MovementStateMachine" type="Node" parent="." unique_id=266792443 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_t14kv")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="MovementStateMachine" unique_id=1994690796 node_paths=PackedStringArray("player")]
+script = ExtResource("5_geje4")
+player = NodePath("../..")
+
+[node name="MoveState" type="Node" parent="MovementStateMachine" unique_id=84543225 node_paths=PackedStringArray("player")]
+script = ExtResource("6_mrt8u")
+player = NodePath("../..")

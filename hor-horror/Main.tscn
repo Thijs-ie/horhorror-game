@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dunw2dasc0jbm"]
+
+[ext_resource type="Script" uid="uid://bmmbarxv55m47" path="res://main.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://b6bf0s4w41lh6" path="res://UI/Scenes/main_menu.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://gnx3igh2bsmo" path="res://UI/Scenes/transition.tscn" id="2_r0du0"]
+
+[node name="Main" type="Node" unique_id=1266597159]
+process_mode = 3
+script = ExtResource("1_uu6xs")
+
+[node name="World2D" type="Node2D" parent="." unique_id=537832457]
+
+[node name="World3D" type="Node3D" parent="." unique_id=2022667312]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=748575482]
+
+[node name="Transition" parent="UI" unique_id=226117378 instance=ExtResource("2_r0du0")]
+z_index = 1
+
+[node name="MainMenu" parent="UI" unique_id=1308199568 instance=ExtResource("2_cm0pq")]
