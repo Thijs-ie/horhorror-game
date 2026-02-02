@@ -11,7 +11,7 @@ const speed: int = 70
 var current_direction: String = "none"
 var dir: String
 var Lights: bool 
-var bright:= false
+var bright:= true
 func _ready() -> void:
 	death = false
 
