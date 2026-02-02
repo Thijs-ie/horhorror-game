@@ -9,7 +9,7 @@ var mouse_input := Vector2.ZERO
 var sensitivity : float
 
 const BREATHING_FREQ: = 0.2
-const BREATHING_AMP: = 0.2
+const BREATHING_AMP: = 0.3
 var t_breath: = 0.0
 var breath_rotation = Vector2.ZERO
 
