@@ -57,7 +57,7 @@ func _ready() -> void:
 	vsync_buttons.item_selected.emit(vsync_buttons.get_index())
 
 func _process(_delta: float) -> void:
-	fps_counter.text = str(Engine.get_frames_per_second())
+	fps_counter.text = str(snapped(Engine.get_frames_per_second(), 1))
 	
 	if Global.paused:
 		return

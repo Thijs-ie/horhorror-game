@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://m6oj0svsrvwy"]
 
-[ext_resource type="Texture2D" uid="uid://dooau6ny46vr8" path="res://3d/Assets/SkyBoxes/DarkStorm4K.hdr" id="1_4v2gq"]
+[ext_resource type="Texture2D" uid="uid://imfm3hcuah06" path="res://3d/Assets/SkyBoxes/CoriolisNight4k.hdr" id="1_dtnux"]
 [ext_resource type="Texture2D" uid="uid://dc1m5yha7l6h5" path="res://addons/kenney_prototype_textures/dark/texture_07.png" id="2_dtnux"]
 [ext_resource type="PackedScene" uid="uid://jcv2iip64xve" path="res://3d/Scenes/player_3d.tscn" id="2_e4p1y"]
+[ext_resource type="PackedScene" uid="uid://pq2rnbp54k3r" path="res://3d/Scenes/throwable_item.tscn" id="4_aqoh1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e4p1y"]
-panorama = ExtResource("1_4v2gq")
+panorama = ExtResource("1_dtnux")
 
 [sub_resource type="Sky" id="Sky_dtnux"]
 sky_material = SubResource("PanoramaSkyMaterial_e4p1y")
@@ -15,8 +16,16 @@ background_mode = 2
 sky = SubResource("Sky_dtnux")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.11658018, 0.13075355, 0.15280777, 1)
+fog_density = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4p1y"]
+albedo_texture = ExtResource("2_dtnux")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqoh1"]
 albedo_texture = ExtResource("2_dtnux")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
@@ -37,4 +46,13 @@ size = Vector3(25, 1, 40)
 material = SubResource("StandardMaterial3D_e4p1y")
 
 [node name="Player3D" parent="." unique_id=1021407674 instance=ExtResource("2_e4p1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.540114, -0.49999952, -2.0102017)
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -3.540114, -0.49999952, -2.0102017)
+
+[node name="ItemTest" parent="." unique_id=1978282403 instance=ExtResource("4_aqoh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3476915, -0.39999962, 4.581109)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=796499373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10.5)
+use_collision = true
+size = Vector3(10, 13, 7)
+material = SubResource("StandardMaterial3D_aqoh1")

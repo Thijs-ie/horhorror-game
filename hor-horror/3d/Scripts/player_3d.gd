@@ -3,6 +3,11 @@ class_name Player3D
 
 @onready var pause_menu: Control = $CanvasLayer/PauseMenu
 @onready var camera: Camera3D = $Head/Camera
+@onready var detection_cast: RayCast3D = $Head/Camera/DetectionCast
+@onready var hand: Node3D = $Head/Camera/Hand
+
+var item := preload("res://3d/Scenes/throwable_item.tscn")
+var held_item: Item
 
 var speed : float
 var accel : float = 10.0
@@ -40,6 +45,13 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.y <= -35:
 		global_position = Vector3.ZERO
+	
+	if is_instance_valid(detection_cast.get_collider()):
+		if detection_cast.is_colliding() && Input.is_action_just_pressed("interact"):
+			detection(detection_cast.get_collider())
+	
+	if held_item && Input.is_action_just_released("throw"):
+		throw()
 
 @warning_ignore("shadowed_variable")
 func move(delta: float, accel: float, drag: float, direction: Vector3, speed: float) -> void:
@@ -56,3 +68,25 @@ func move(delta: float, accel: float, drag: float, direction: Vector3, speed: fl
 	else:
 		velocity.x = lerp(velocity.x, wish_vel.x, delta * (accel * 0.5))
 		velocity.z = lerp(velocity.z, wish_vel.z, delta * (accel * 0.5))
+
+func detection(collider):
+	if held_item:
+		return
+	
+	collider = collider.get_parent()
+	
+	if collider as Item:
+		
+		collider.queue_free()
+		
+		var instance = item.instantiate()
+		hand.add_child(instance)
+		held_item = instance
+
+func throw():
+	held_item.direction = -hand.global_transform.basis.z
+	held_item.thrown = true
+	var item_pos = held_item.global_position
+	held_item.reparent(get_parent())
+	held_item.global_position = item_pos
+	held_item = null

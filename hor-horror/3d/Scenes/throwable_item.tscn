@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://pq2rnbp54k3r"]
+
+[ext_resource type="Script" uid="uid://dlx100lujvc6r" path="res://3d/scripts/item.gd" id="1_kdkg2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qifol"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kdkg2"]
+height = 0.2
+radius = 0.05
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cy0a2"]
+height = 0.25
+radius = 0.075
+
+[node name="ItemTest" type="Node3D" unique_id=1978282403 groups=["Items"]]
+script = ExtResource("1_kdkg2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1462696369]
+mesh = SubResource("CylinderMesh_qifol")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1445417422]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1166396923]
+shape = SubResource("CylinderShape3D_kdkg2")
+
+[node name="FloorCast" type="ShapeCast3D" parent="." unique_id=1844178142]
+shape = SubResource("CylinderShape3D_cy0a2")
+target_position = Vector3(0, 0, 0)
