@@ -78,8 +78,5 @@ func fleshlight():
 			point_light.energy = 1
 			watch_me.energy = 1
 		else:
-			point_light.energy = 0.5
-			watch_me.energy = 0.5
-
-
-#make everyting dark except the Watch_Me collision shape
+			point_light.energy = 0.0
+			watch_me.energy = 0.1

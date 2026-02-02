@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="HorHorror"
+config/name="Between Existence"
 run/main_scene="uid://dunw2dasc0jbm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://d7lgvylerpec"
@@ -25,6 +25,7 @@ Global="*uid://crvvuoaykb6kk"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
@@ -82,7 +83,6 @@ interact={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
 

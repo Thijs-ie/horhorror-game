@@ -475,7 +475,10 @@ sources/2 = SubResource("TileSetAtlasSource_1brq1")
 sources/3 = SubResource("TileSetAtlasSource_wiv41")
 sources/4 = SubResource("TileSetAtlasSource_ygps8")
 
-[node name="Test2D" type="Node2D" unique_id=1393915459]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qpcv"]
+size = Vector2(46, 27)
+
+[node name="Main_Room" type="Node2D" unique_id=1393915459]
 script = ExtResource("1_1brq1")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1617736055]
@@ -488,6 +491,8 @@ tile_map_data = PackedByteArray("AADT/+X/AgANAAkAAADT/+b/AgALAAkAAADT/+f/AgANAAk
 tile_set = SubResource("TileSet_0b7t6")
 
 [node name="Objects" type="TileMapLayer" parent="TileMap" unique_id=487820958]
+z_index = 1
+tile_map_data = PackedByteArray("AADZ/+f/AgABAAIAAADZ/+j/AgABAAMAAADZ/+n/AgABAAQAAADa/+f/AgACAAIAAADa/+j/AgACAAMAAADa/+n/AgACAAQAAAA=")
 tile_set = SubResource("TileSet_0b7t6")
 
 [node name="Walls" type="TileMapLayer" parent="TileMap" unique_id=1004184966]
@@ -504,3 +509,19 @@ position = Vector2(348, 70)
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1403410384]
 position = Vector2(854, 454)
 color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+
+[node name="Door_Check" type="Area2D" parent="." unique_id=1540034150]
+position = Vector2(854, 454)
+
+[node name="Door" type="CollisionShape2D" parent="Door_Check" unique_id=1984616858]
+position = Vector2(-608, -366.5)
+shape = SubResource("RectangleShape2D_1qpcv")
+
+[node name="F_Door" type="Label" parent="." unique_id=904430285]
+offset_left = 184.0
+offset_top = 38.0
+offset_right = 343.0
+offset_bottom = 61.0
+text = "Press F to open door"
+
+[connection signal="body_entered" from="Door_Check" to="." method="_on_door_check_body_entered"]
