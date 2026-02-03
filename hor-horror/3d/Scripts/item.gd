@@ -3,24 +3,25 @@ class_name Item
 
 @onready var floor_cast: ShapeCast3D = $FloorCast
 
-var gravity = -9.8
+var gravity = 9.8
 var direction: Vector3
-var speed := 12.5
+var speed := 10.5
 
 var thrown := false
 
+var gravity_direction: float
+
 func _physics_process(delta: float) -> void:
-	if !thrown:
+	if !thrown || floor_cast.is_colliding():
 		return
 	
-	if direction != Vector3.ZERO:
-		direction =lerp(direction, Vector3.ZERO, delta)
-		global_position += direction * speed * delta
+	gravity_direction -= gravity * delta
 	
 	if !floor_cast.is_colliding():
-		position.y += gravity / 175
-	else:
-		direction = Vector3.ZERO
+		direction = Vector3(0, gravity_direction, -speed)
+	
+	position += transform.basis * direction * delta
+	
 
 func launch(dir: Vector3):
 	direction = dir.normalized()
