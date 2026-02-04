@@ -1,8 +1,27 @@
 extends Node2D
-@onready var stairs_b: Area2D = $Stairs_B
-@onready var stairs_b_1: CollisionShape2D = $Stairs_B/Stairs_B_1
+@onready var f_door: Label = $F_Door
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed ("interact") and f_door.visible == true:
+		Global.main.transition_to_2d("res://2d/Scenes/test_2d.tscn", "SpawnPoint")
+
+
+func _on_stairs_a_up_body_entered(body: Node2D) -> void:
+	if body.name == "Player2D":
+		Global.main.transition_to_2d("res://2d/Scenes/hallway_floor_2.tscn", "Stairs_A_down_2")
+
+
+func _on_stairs_b_up_body_entered(body: Node2D) -> void:
+	if body.name == "Player2D":
+		Global.main.transition_to_2d("res://2d/Scenes/hallway_floor_2.tscn", "Stairs_B_down_2")
+
+
+func _on_stairs_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		f_door.visible = true
 
 
 
-func _on_stairs_b_area_entered(area: Area2D) -> void:
-	print ("change scene")
+func _on_stairs_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		f_door.visible = false

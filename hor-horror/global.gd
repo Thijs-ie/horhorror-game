@@ -14,3 +14,5 @@ var sens_mod : float
 func pause():
 	paused = !paused
 	get_tree().paused = paused
+	
+var stair_position_spawn : Vector2

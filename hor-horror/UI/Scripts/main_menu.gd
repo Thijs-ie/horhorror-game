@@ -6,7 +6,7 @@ func _ready() -> void:
 
 
 func _on_scene_2d_pressed() -> void:
-	Global.main.transition_to_2d("res://2d/Scenes/test_2d.tscn")
+	Global.main.transition_to_2d("res://2d/Scenes/test_2d.tscn", "SpawnPoint")
 
 
 func _on_scene_3d_pressed() -> void:

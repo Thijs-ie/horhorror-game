@@ -171,7 +171,7 @@ animations = [{
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_wxkyi"]
 points = PackedVector2Array(36.999992, -78, -42.000008, -78, 0, 0)
 
-[node name="Player2D" type="CharacterBody2D" unique_id=150568099]
+[node name="Player2D" type="CharacterBody2D" unique_id=150568099 groups=["Player"]]
 script = ExtResource("1_wxkyi")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=442761815]
