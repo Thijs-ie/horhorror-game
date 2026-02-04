@@ -13,6 +13,8 @@ var transition_out := "transition_out"
 
 var custom_blend := -1
 
+var player_2d := preload("res://2d/Scenes/player_2d.tscn")
+
 func _ready() -> void:
 	Global.main = self
 	
@@ -20,7 +22,7 @@ func _ready() -> void:
 		if child as AnimationPlayer:
 			anim_player = child
 
-func transition_to_2d(target_scene : String, seconds : float = 1.0):
+func transition_to_2d(target_scene : String, spawn_point : String, seconds : float = 1.0):
 	anim_player.play(transition_out, custom_blend, 1.0 / seconds)
 	
 	await anim_player.animation_finished
@@ -33,10 +35,16 @@ func transition_to_2d(target_scene : String, seconds : float = 1.0):
 		if child.name != "Transition":
 			ui.remove_child(child)
 	
-	var scene = load(target_scene)
-	var instance = scene.instantiate()
+	var scene := load(target_scene)
+	var scene_instance = scene.instantiate()
 	
-	world_2d.add_child(instance)
+	var player_instance = player_2d.instantiate()
+	var coordinates = scene_instance.find_child(spawn_point)
+	player_instance.global_position = coordinates.global_position
+	scene_instance.add_child(player_instance)
+	
+	
+	world_2d.add_child(scene_instance)
 	
 	anim_player.play(transition_in, custom_blend, 1.0 / seconds)
 

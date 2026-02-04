@@ -6,9 +6,13 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed ("interact") and f_door.visible == true:
-		Global.main.transition_to_2d("res://2d/Scenes/hallway_floor_2.tscn")
-	
+		Global.main.transition_to_2d("res://2d/Scenes/hallway_floor_2.tscn", "Door_Main")
+
 
 
 func _on_door_check_body_entered(body: Node2D) -> void:
 	f_door.visible = true
+
+
+func _on_door_check_body_exited(body: Node2D) -> void:
+	f_door.visible = false
