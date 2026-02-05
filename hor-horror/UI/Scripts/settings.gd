@@ -104,7 +104,7 @@ func _on_display_buttons_item_selected(index: int) -> void:
 func _on_resolution_buttons_item_selected(index: int) -> void:
 	var text := resolution_buttons.get_item_text(index)
 	
-	var parts := text.split("x", false)
+	var parts := text.split("X", false)
 	var width := parts[0].strip_edges().to_int()
 	var height := parts[1].strip_edges().to_int()
 	
@@ -139,8 +139,8 @@ func _on_return_pressed() -> void:
 
 func _on_show_fps_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		show_fps_button.text = "Hide"
+		show_fps_button.text = "HIDE"
 		fps_counter.visible = true
 	else:
-		show_fps_button.text = "Show"
+		show_fps_button.text = "SHOW"
 		fps_counter.visible = false

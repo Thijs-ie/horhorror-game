@@ -3,13 +3,16 @@
 [ext_resource type="Script" uid="uid://df4vyuf4b0dm2" path="res://3d/Scripts/player_3d.gd" id="1_blcwy"]
 [ext_resource type="PackedScene" uid="uid://dk55m1fofat0c" path="res://UI/Scenes/pause_menu.tscn" id="2_fdaqm"]
 [ext_resource type="Script" uid="uid://cogxmf7aiqfp2" path="res://3d/Scripts/camera.gd" id="2_pr8jp"]
+[ext_resource type="Texture2D" uid="uid://cnqldcmcuam7r" path="res://3d/Assets/flahslight_text.png" id="3_mrt8u"]
 [ext_resource type="Shader" uid="uid://ch31gp6tfrnad" path="res://3d/Assets/retro.gdshader" id="4_geje4"]
 [ext_resource type="Script" uid="uid://bqor68f25a21p" path="res://3d/Scripts/States/state_machine.gd" id="4_t14kv"]
+[ext_resource type="FontFile" uid="uid://vew8is4rhj0r" path="res://UI/Assets/Dank-Depths.ttf" id="5_63218"]
 [ext_resource type="Script" uid="uid://p5k2ea3b4ye" path="res://3d/Scripts/States/idle_state.gd" id="5_geje4"]
 [ext_resource type="Script" uid="uid://y3dbjmnvrg7i" path="res://3d/Scripts/States/move_state.gd" id="6_mrt8u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_50s5h"]
 radius = 0.3
+height = 1.7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrt8u"]
 shader = ExtResource("4_geje4")
@@ -26,30 +29,38 @@ shader_parameter/flicker_strength = 0.0010000000475
 script = ExtResource("1_blcwy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=117314436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_50s5h")
 
 [node name="Head" type="Node3D" parent="." unique_id=1634199992]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=341262478]
 script = ExtResource("2_pr8jp")
 
 [node name="DetectionCast" type="RayCast3D" parent="Head/Camera" unique_id=763962149 groups=["Items"]]
-target_position = Vector3(0, 0, -20)
+target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 
 [node name="Hand" type="Node3D" parent="Head/Camera" unique_id=905911743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.100000024, -0.34000003)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera" unique_id=1910708767]
+[node name="FlashLight" type="SpotLight3D" parent="Head/Camera" unique_id=1910708767]
 light_color = Color(0.74509805, 0.7607843, 1, 1)
-light_energy = 15.0
-light_indirect_energy = 10.0
-light_volumetric_fog_energy = 16.0
-spot_range = 15.0
-spot_attenuation = 0.0
-spot_angle = 35.0
+light_energy = 5.0
+light_indirect_energy = 5.0
+light_volumetric_fog_energy = 5.0
+light_projector = ExtResource("3_mrt8u")
+shadow_enabled = true
+shadow_bias = 0.6
+shadow_normal_bias = 1.5
+shadow_reverse_cull_face = true
+shadow_transmittance_bias = 0.4
+shadow_opacity = 0.8
+shadow_blur = 4.4
+spot_range = 7.0
+spot_attenuation = 0.5
+spot_angle = 25.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=797745221]
 layer = 2
@@ -61,6 +72,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 49.0
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("5_63218")
 theme_override_font_sizes/font_size = 24
 text = "0 FPS"
 

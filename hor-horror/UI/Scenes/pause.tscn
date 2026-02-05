@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://bg7rl40ogvcfm"]
 
+[ext_resource type="FontFile" uid="uid://vew8is4rhj0r" path="res://UI/Assets/Dank-Depths.ttf" id="1_0roxf"]
 [ext_resource type="Script" uid="uid://bm11k8oo5dmhm" path="res://UI/Scripts/pause.gd" id="1_3l5e3"]
 
+[sub_resource type="Theme" id="Theme_14sa4"]
+default_font = ExtResource("1_0roxf")
+
 [node name="Pause" type="Control" unique_id=1649060483]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_14sa4")
 script = ExtResource("1_3l5e3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1038631502]
@@ -46,25 +50,25 @@ process_mode = 3
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Resume"
+text = "RESUME"
 
 [node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=361374001]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Settings"
+text = "SETTINGS"
 
 [node name="Quit1" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1127198582]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Quit to main menu"
+text = "QUIT TO MAIN MENU"
 
 [node name="Quit2" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1215931259]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Quit to desktop"
+text = "QUIT TO DESKTOP"
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=890735742]
 layout_mode = 2

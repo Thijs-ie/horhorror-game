@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dc1m5yha7l6h5" path="res://addons/kenney_prototype_textures/dark/texture_07.png" id="2_dtnux"]
 [ext_resource type="PackedScene" uid="uid://jcv2iip64xve" path="res://3d/Scenes/player_3d.tscn" id="2_e4p1y"]
 [ext_resource type="PackedScene" uid="uid://pq2rnbp54k3r" path="res://3d/Scenes/throwable_item.tscn" id="4_aqoh1"]
+[ext_resource type="PackedScene" uid="uid://d17tg2akrfef5" path="res://3d/Scenes/floor_2.tscn" id="5_562c8"]
+[ext_resource type="PackedScene" uid="uid://b3j1tp28liser" path="res://3d/Scenes/weeping_angel.tscn" id="6_5qng8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e4p1y"]
 panorama = ExtResource("1_dtnux")
@@ -32,12 +34,11 @@ uv1_triplanar = true
 
 [node name="Test3D" type="Node3D" unique_id=645666312]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1249690739]
+transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, 0, 0, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=106139288]
 environment = SubResource("Environment_aqoh1")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=42471125]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2015764581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -56,3 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10.5)
 use_collision = true
 size = Vector3(10, 13, 7)
 material = SubResource("StandardMaterial3D_aqoh1")
+
+[node name="Floor2" parent="." unique_id=1065625115 instance=ExtResource("5_562c8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -24.456028, -0.99999976, 0.12186122)
+
+[node name="WeepingAngel" parent="." unique_id=143303557 instance=ExtResource("6_5qng8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6591952, -0.50000036, 1.7606311)

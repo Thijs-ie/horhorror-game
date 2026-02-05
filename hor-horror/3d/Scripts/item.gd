@@ -22,6 +22,3 @@ func _physics_process(delta: float) -> void:
 	
 	position += transform.basis * direction * delta
 	
-
-func launch(dir: Vector3):
-	direction = dir.normalized()
