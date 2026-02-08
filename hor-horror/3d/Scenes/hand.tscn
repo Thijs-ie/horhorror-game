@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bciuytvimc57h"]
+
+[ext_resource type="Script" uid="uid://2wlr36sn7s6a" path="res://3d/Scripts/hand.gd" id="1_w4hdx"]
+[ext_resource type="PackedScene" uid="uid://bl727kvrqocb0" path="res://3d/Assets/Models/hand.tscn" id="2_1emah"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4hdx"]
+size = Vector3(1.1, 1, 0.7)
+
+[node name="Hand" type="CharacterBody3D" unique_id=1846617799 groups=["Enemy"]]
+script = ExtResource("1_w4hdx")
+
+[node name="Hand2" parent="." unique_id=1875429872 instance=ExtResource("2_1emah")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=915097730]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.050000012, 1.15, -0.14999999)
+shape = SubResource("BoxShape3D_w4hdx")
+
+[node name="StunTimer" type="Timer" parent="." unique_id=1127625262]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
