@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dele2thu4xrsp"
-path.s3tc="res://.godot/imported/texture_08.png-add0c08e78cde6ad4eaac64e7b9a9204.s3tc.ctex"
+uid="uid://cna7rhlfn1ncv"
+path.s3tc="res://.godot/imported/FloorTiles_floors_walls_and_stairs-removebg-preview (1).png-60f56b06de44a01f187abf746f15e546.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "e286f29897c402fec606b13144a4eb73"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/red/texture_08.png"
-dest_files=["res://.godot/imported/texture_08.png-add0c08e78cde6ad4eaac64e7b9a9204.s3tc.ctex"]
+source_file="res://3d/Assets/Models/FloorTiles_floors_walls_and_stairs-removebg-preview (1).png"
+dest_files=["res://.godot/imported/FloorTiles_floors_walls_and_stairs-removebg-preview (1).png-60f56b06de44a01f187abf746f15e546.s3tc.ctex"]
 
 [params]
 

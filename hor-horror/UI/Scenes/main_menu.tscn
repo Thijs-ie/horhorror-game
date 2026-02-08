@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b6bf0s4w41lh6"]
 
 [ext_resource type="Script" uid="uid://cadxd8xwm17k6" path="res://UI/Scripts/main_menu.gd" id="1_2sit6"]
+[ext_resource type="FontFile" uid="uid://vew8is4rhj0r" path="res://UI/Assets/Dank-Depths.ttf" id="1_h6jt3"]
 
 [sub_resource type="Theme" id="Theme_fnvfa"]
+default_font = ExtResource("1_h6jt3")
 default_font_size = 32
 
 [node name="MainMenu" type="Control" unique_id=1308199568]
@@ -49,17 +51,17 @@ vertical_alignment = 2
 [node name="Scene2d" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1792635142]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
-text = "Scene 2d"
+text = "SCENE 2D"
 
 [node name="Scene3d" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2110389160]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
-text = "Scene 3d"
+text = "SCENE 3D"
 
 [node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=291724156]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
-text = "quit"
+text = "QUIT"
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=414137482]
 layout_mode = 2

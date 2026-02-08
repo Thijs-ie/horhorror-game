@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://bl727kvrqocb0"]
+
+[ext_resource type="PackedScene" uid="uid://barhcw6wyux4a" path="res://3d/Assets/Models/Hand.glb" id="1_w4hdx"]
+[ext_resource type="Texture2D" uid="uid://dele2thu4xrsp" path="res://addons/kenney_prototype_textures/red/texture_08.png" id="2_1emah"]
+[ext_resource type="Script" uid="uid://bebhlk0st7nfp" path="res://3d/Scripts/IK/ik_target.gd" id="3_1emah"]
+[ext_resource type="Script" uid="uid://bqobfmwmfyhl3" path="res://3d/Scripts/IK/step_ray.gd" id="4_s6vwe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6vwe"]
+albedo_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+albedo_texture = ExtResource("2_1emah")
+uv1_triplanar = true
+
+[node name="Hand2" unique_id=1875429872 instance=ExtResource("1_w4hdx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Armature" parent="." index="0" unique_id=1769051311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=694056619]
+transform = Transform3D(1, 0, 0, 0, 0.9892723, 0.14608303, 0, -0.14608301, 0.98927236, 0, 0.06666666, 0)
+
+[node name="Hand" parent="Armature/Skeleton3D" index="0" unique_id=325621216]
+surface_material_override/0 = SubResource("StandardMaterial3D_s6vwe")
+
+[node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" index="1" unique_id=1702747185]
+max_iterations = 5
+angular_delta_limit = 0.29670597283903605
+deterministic = true
+setting_count = 4
+settings/0/target_node = NodePath("../../../IndexIKTarget")
+settings/1/target_node = NodePath("../../../MiddleIKTarget")
+settings/2/target_node = NodePath("../../../RingIKTarget")
+settings/3/target_node = NodePath("../../../PinkyIKTarget")
+settings/0/root_bone_name = "Index1"
+settings/0/root_bone = 7
+settings/0/end_bone_name = "Index3"
+settings/0/end_bone = 9
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.25
+settings/0/joint_count = 3
+settings/1/root_bone_name = "Middle1"
+settings/1/root_bone = 4
+settings/1/end_bone_name = "Middle3"
+settings/1/end_bone = 6
+settings/1/extend_end_bone = true
+settings/1/end_bone/direction = 6
+settings/1/end_bone/length = 0.25
+settings/1/joint_count = 3
+settings/2/root_bone_name = "Ring1"
+settings/2/root_bone = 10
+settings/2/end_bone_name = "Ring3"
+settings/2/end_bone = 12
+settings/2/extend_end_bone = true
+settings/2/end_bone/direction = 6
+settings/2/end_bone/length = 0.25
+settings/2/joint_count = 3
+settings/3/root_bone_name = "Pinky1"
+settings/3/root_bone = 13
+settings/3/end_bone_name = "Pinky3"
+settings/3/end_bone = 15
+settings/3/extend_end_bone = true
+settings/3/end_bone/direction = 6
+settings/3/end_bone/length = 0.25
+settings/3/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 0
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 0
+settings/0/joints/2/limitation = null
+settings/1/joints/0/rotation_axis = 3
+settings/1/joints/0/limitation = null
+settings/1/joints/1/rotation_axis = 0
+settings/1/joints/1/limitation = null
+settings/1/joints/2/rotation_axis = 0
+settings/1/joints/2/limitation = null
+settings/2/joints/0/rotation_axis = 3
+settings/2/joints/0/limitation = null
+settings/2/joints/1/rotation_axis = 0
+settings/2/joints/1/limitation = null
+settings/2/joints/2/rotation_axis = 0
+settings/2/joints/2/limitation = null
+settings/3/joints/0/rotation_axis = 3
+settings/3/joints/0/limitation = null
+settings/3/joints/1/rotation_axis = 0
+settings/3/joints/1/limitation = null
+settings/3/joints/2/rotation_axis = 0
+settings/3/joints/2/limitation = null
+
+[node name="IndexIKTarget" type="Marker3D" parent="." index="1" unique_id=1287560366 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.010103866, -0.39126992)
+top_level = true
+script = ExtResource("3_1emah")
+step_target = NodePath("../StepTargetContainer/IndexRay/IndexStepTarget")
+
+[node name="MiddleIKTarget" type="Marker3D" parent="." index="2" unique_id=1192982854 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.010103866, -0.5912699)
+top_level = true
+script = ExtResource("3_1emah")
+step_target = NodePath("../StepTargetContainer/MiddleRay/MiddleStepTarget")
+
+[node name="RingIKTarget" type="Marker3D" parent="." index="3" unique_id=2095702954 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20000002, 0.010103866, -0.39126992)
+top_level = true
+script = ExtResource("3_1emah")
+step_target = NodePath("../StepTargetContainer/RingRay/RingStepTarget")
+
+[node name="PinkyIKTarget" type="Marker3D" parent="." index="4" unique_id=1682572725 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.010103866, -0.19126993)
+top_level = true
+script = ExtResource("3_1emah")
+step_target = NodePath("../StepTargetContainer/PinkyRay/PinkyStepTarget")
+
+[node name="StepTargetContainer" type="Node3D" parent="." index="5" unique_id=783223642]
+
+[node name="IndexRay" type="RayCast3D" parent="StepTargetContainer" index="0" unique_id=203096523 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1, -0.90000004)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("4_s6vwe")
+step_target = NodePath("IndexStepTarget")
+
+[node name="IndexStepTarget" type="Marker3D" parent="StepTargetContainer/IndexRay" index="0" unique_id=865398857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MiddleRay" type="RayCast3D" parent="StepTargetContainer" index="1" unique_id=1183526821 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1, -1)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("4_s6vwe")
+step_target = NodePath("MiddleStepTarget")
+
+[node name="MiddleStepTarget" type="Marker3D" parent="StepTargetContainer/MiddleRay" index="0" unique_id=1898533461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="RingRay" type="RayCast3D" parent="StepTargetContainer" index="2" unique_id=948828097 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1, -0.8)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("4_s6vwe")
+step_target = NodePath("RingStepTarget")
+
+[node name="RingStepTarget" type="Marker3D" parent="StepTargetContainer/RingRay" index="0" unique_id=737735154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="PinkyRay" type="RayCast3D" parent="StepTargetContainer" index="3" unique_id=136052725 node_paths=PackedStringArray("step_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.6000001)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("4_s6vwe")
+step_target = NodePath("PinkyStepTarget")
+
+[node name="PinkyStepTarget" type="Marker3D" parent="StepTargetContainer/PinkyRay" index="0" unique_id=214407843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

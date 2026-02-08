@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cn14hga85y2dn"]
+
+[ext_resource type="PackedScene" uid="uid://cnoslbpol61sd" path="res://3d/Assets/Models/FloorTiles.glb" id="1_7x4uu"]
+
+[node name="FloorTiles" unique_id=1096302170 instance=ExtResource("1_7x4uu")]

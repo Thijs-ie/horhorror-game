@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dn8xyj6dabjmc"]
 
 [ext_resource type="Script" uid="uid://bx1m78vlx5fe3" path="res://UI/Scripts/input.gd" id="1_jqfrl"]
+[ext_resource type="FontFile" uid="uid://vew8is4rhj0r" path="res://UI/Assets/Dank-Depths.ttf" id="1_jsb5y"]
 [ext_resource type="PackedScene" uid="uid://cdijxf5cf0v3u" path="res://UI/Scenes/input_button.tscn" id="2_72que"]
 
 [sub_resource type="Theme" id="Theme_d3gu3"]
+default_font = ExtResource("1_jsb5y")
 default_font_size = 24
 
 [node name="InputMenu" type="Control" unique_id=2105584381]
@@ -85,7 +87,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(175, 75)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Return"
+text = "RETURN"
 
 [node name="Control2" type="Control" parent="VBoxContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/Return" unique_id=1894842943]
 layout_mode = 2

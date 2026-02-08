@@ -84,7 +84,6 @@ func detection(collider):
 		held_item = instance
 
 func throw():
-	held_item.direction = -hand.global_transform.basis.z
 	held_item.thrown = true
 	var item_pos = held_item.global_position
 	held_item.reparent(get_parent())
