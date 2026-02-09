@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cb0r1bv2i1tj1" path="res://2d/Art/Map/Spooky Mansion Asset Pack/rugs_and_sheets-removebg-preview.png" id="4_1qpcv"]
 [ext_resource type="Texture2D" uid="uid://d1p6bhlhnt6qk" path="res://2d/Art/Map/darkforestbackground_cont.png" id="5_1qpcv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygps8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wiv41"]
 texture = ExtResource("2_wiv41")
 0:3/size_in_atlas = Vector2i(3, 3)
 0:3/0 = 0
@@ -38,7 +38,7 @@ texture = ExtResource("2_wiv41")
 1:6/0 = 0
 2:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0cx7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygps8"]
 texture = ExtResource("2_a4d6d")
 17:0/0 = 0
 18:0/0 = 0
@@ -354,7 +354,7 @@ texture = ExtResource("2_a4d6d")
 1:2/0 = 0
 1:2/0/y_sort_origin = 20
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfp1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0cx7"]
 texture = ExtResource("3_0b7t6")
 0:3/size_in_atlas = Vector2i(2, 2)
 0:3/0 = 0
@@ -419,7 +419,7 @@ texture = ExtResource("3_0b7t6")
 12:0/0/y_sort_origin = 10
 12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.416725, -22.304153, 11.789337, -24.215939, 15.294281, -17.206062, 15.931541, 8.603031, 12.107971, 26.764984, -5.7353516, 26.12772, -5.7353516, 16.887428)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd4b2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfp1"]
 texture = ExtResource("4_1qpcv")
 0:0/0 = 0
 1:0/0 = 0
@@ -475,10 +475,10 @@ texture = ExtResource("4_1qpcv")
 
 [sub_resource type="TileSet" id="TileSet_0b7t6"]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_g0cx7")
-sources/3 = SubResource("TileSetAtlasSource_gmfp1")
-sources/4 = SubResource("TileSetAtlasSource_jd4b2")
-sources/0 = SubResource("TileSetAtlasSource_ygps8")
+sources/2 = SubResource("TileSetAtlasSource_ygps8")
+sources/3 = SubResource("TileSetAtlasSource_g0cx7")
+sources/4 = SubResource("TileSetAtlasSource_gmfp1")
+sources/0 = SubResource("TileSetAtlasSource_wiv41")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qpcv"]
 size = Vector2(36, 21)
@@ -525,6 +525,7 @@ position = Vector2(-615, -363.5)
 shape = SubResource("RectangleShape2D_1qpcv")
 
 [node name="F_Door" type="Label" parent="." unique_id=904430285]
+visible = false
 z_index = 1
 offset_left = 207.0
 offset_top = 51.0

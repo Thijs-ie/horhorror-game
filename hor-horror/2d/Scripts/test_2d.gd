@@ -11,8 +11,10 @@ func _process(delta: float) -> void:
 
 
 func _on_door_check_body_entered(body: Node2D) -> void:
-	f_door.visible = true
+	if body as Player2D:
+		f_door.visible = true
 
 
 func _on_door_check_body_exited(body: Node2D) -> void:
-	f_door.visible = false
+	if body as Player2D:
+		f_door.visible = false

@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player2D
+
 @onready var hitbox: CollisionShape2D = $Hitbox
 @onready var anim_sprite: AnimatedSprite2D = $Animations
 @onready var watch_me: PointLight2D = $PointLight2D
@@ -12,6 +14,7 @@ var current_direction: String = "none"
 var dir: String
 var Lights: bool 
 var bright:= true
+var shift_yes:= false
 func _ready() -> void:
 	death = false
 
@@ -20,6 +23,11 @@ func _physics_process(delta: float) -> void:
 	global_position = global_position.round()
 	fleshlight()
 	
+	if Input.is_action_just_pressed("shift"):
+		shift_yes = true
+	if Input.is_action_just_released("shift"):
+		shift_yes = false
+
 func player_movement(delta):
 	
 	var input_dir = Vector2.ZERO
@@ -38,9 +46,9 @@ func player_movement(delta):
 		velocity = input_dir * speed
 		play_anim(1)
 
-		if abs(input_dir.x) > abs(input_dir.y):
+		if abs(input_dir.x) > abs(input_dir.y) and shift_yes == false:
 			current_direction = "right" if input_dir.x > 0 else "left"
-		else:
+		elif shift_yes == false:
 			current_direction = "down" if input_dir.y > 0 else "up"
 	else:
 		velocity = Vector2.ZERO

@@ -25,9 +25,9 @@ func _on_stairs_b_down_body_entered(body: Node2D) -> void:
 
 
 func _on_door_check_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body as Player2D:
 		f_door.visible = true
 
 func _on_door_check_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body as Player2D:
 		f_door.visible = false

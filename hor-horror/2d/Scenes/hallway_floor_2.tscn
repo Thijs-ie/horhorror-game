@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dwv4l3ube8q1q"]
+[gd_scene format=4 uid="uid://c0h3j32syy5jn"]
 
 [ext_resource type="Script" uid="uid://dib0wdd204tev" path="res://2d/Scripts/hallway_floor_2.gd" id="1_37ybu"]
 [ext_resource type="Texture2D" uid="uid://otuqvndr3hw3" path="res://2d/Art/Map/Spooky Mansion Asset Pack/floors_walls_and_stairs-removebg-preview (1).png" id="1_qcuw5"]
@@ -1084,6 +1084,7 @@ position = Vector2(400, 8)
 shape = SubResource("CircleShape2D_qcuw5")
 
 [node name="F_Door" type="Label" parent="." unique_id=67069363]
+visible = false
 offset_left = 1204.0
 offset_top = 404.0
 offset_right = 1363.0
