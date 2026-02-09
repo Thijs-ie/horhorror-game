@@ -1,17 +1,17 @@
-[gd_scene format=4 uid="uid://x2lvxb45pcm6"]
+[gd_scene format=4 uid="uid://cex3e06d6k8yt"]
 
-[ext_resource type="Script" uid="uid://qbk7my2cc0dx" path="res://2d/scripts/halways_floor_3.gd" id="1_0ngto"]
+[ext_resource type="Script" path="res://2d/scripts/halways_floor_3.gd" id="1_0ngto"]
 [ext_resource type="Texture2D" uid="uid://c3wmrmhflmmwe" path="res://2d/Art/Map/Spooky Mansion Asset Pack/Ladder.png" id="1_q8a66"]
 [ext_resource type="Texture2D" uid="uid://c1w82fxuog3vk" path="res://2d/Art/Map/Spooky Mansion Asset Pack/tables_and_dressers-removebg-preview.png" id="2_0ngto"]
 [ext_resource type="Texture2D" uid="uid://otuqvndr3hw3" path="res://2d/Art/Map/Spooky Mansion Asset Pack/floors_walls_and_stairs-removebg-preview (1).png" id="3_k7hyf"]
 [ext_resource type="Texture2D" uid="uid://dgc7l0yh42wnr" path="res://2d/Art/Map/Spooky Mansion Asset Pack/chairs_and_sofas-removebg-preview.png" id="4_kolbl"]
 [ext_resource type="Texture2D" uid="uid://cb0r1bv2i1tj1" path="res://2d/Art/Map/Spooky Mansion Asset Pack/rugs_and_sheets-removebg-preview.png" id="5_4l2hf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agp17"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ngto"]
 texture = ExtResource("1_q8a66")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gv8ad"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7hyf"]
 texture = ExtResource("2_0ngto")
 0:3/size_in_atlas = Vector2i(3, 3)
 0:3/0 = 0
@@ -39,7 +39,7 @@ texture = ExtResource("2_0ngto")
 1:1/size_in_atlas = Vector2i(1, 2)
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4slch"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kolbl"]
 texture = ExtResource("3_k7hyf")
 17:0/0 = 0
 18:0/0 = 0
@@ -273,8 +273,11 @@ texture = ExtResource("3_k7hyf")
 13:9/0 = 0
 14:9/0 = 0
 15:9/0 = 0
+15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:9/0 = 0
+17:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:9/0 = 0
 20:9/0 = 0
 21:9/0 = 0
@@ -361,7 +364,7 @@ texture = ExtResource("3_k7hyf")
 17:13/0 = 0
 18:13/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yic7b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l2hf"]
 texture = ExtResource("4_kolbl")
 4:0/0 = 0
 5:0/0 = 0
@@ -452,7 +455,7 @@ texture = ExtResource("4_kolbl")
 12:7/0 = 0
 13:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xw6f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agp17"]
 texture = ExtResource("5_4l2hf")
 0:0/0 = 0
 1:0/0 = 0
@@ -508,11 +511,11 @@ texture = ExtResource("5_4l2hf")
 
 [sub_resource type="TileSet" id="TileSet_ot1bm"]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_4slch")
-sources/3 = SubResource("TileSetAtlasSource_yic7b")
-sources/4 = SubResource("TileSetAtlasSource_1xw6f")
-sources/0 = SubResource("TileSetAtlasSource_agp17")
-sources/1 = SubResource("TileSetAtlasSource_gv8ad")
+sources/2 = SubResource("TileSetAtlasSource_kolbl")
+sources/3 = SubResource("TileSetAtlasSource_4l2hf")
+sources/4 = SubResource("TileSetAtlasSource_agp17")
+sources/0 = SubResource("TileSetAtlasSource_0ngto")
+sources/1 = SubResource("TileSetAtlasSource_k7hyf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6de0s"]
 size = Vector2(15, 52)
